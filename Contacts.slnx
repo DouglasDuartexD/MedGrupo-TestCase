@@ -1,0 +1,14 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/Contacts.API/Contacts.API.csproj" />
+    <Project Path="src/Contacts.Application/Contacts.Application.csproj" />
+    <Project Path="src/Contacts.Domain/Contacts.Domain.csproj" />
+    <Project Path="src/Contacts.Infrastructure/Contacts.Infrastructure.csproj" />
+    <Project Path="tests/Contacts.Tests/Contacts.Tests.csproj" />
+  </Folder>
+</Solution>
