@@ -11,7 +11,7 @@ API REST para gerenciamento de contatos, desenvolvida com:
 
 ## Objetivo
 
-O projeto expoe uma API para cadastro e manutencao de contatos, com regras de negocio, validacao de entrada e persistencia em `SQL Server`.
+O projeto expoe uma API para cadastro e manutenção de contatos, com regras de negocio, validação de entrada e persistencia em `SQL Server`.
 
 Fluxo principal de uso em desenvolvimento:
 
@@ -20,9 +20,9 @@ Fluxo principal de uso em desenvolvimento:
 3. Abrir o Swagger
 4. Executar os testes quando necessario
 
-## Documentacao
+## Documentação
 
-Documentacao complementar:
+Documentação complementar:
 
 - [docs/README.md](./docs/README.md)
 - [docs/architecture.md](./docs/architecture.md)
@@ -67,10 +67,10 @@ SA_PASSWORD=YourStrong@Pass123
 SQLSERVER_EDITION=Developer
 ```
 
-Observacoes:
+Observações:
 
 - o arquivo `.env` e local e esta no `.gitignore`
-- se voce alterar a senha do `sa` em um ambiente que ja tem volume criado, pode ser necessario recriar o volume do banco
+- se voce alterar a senha do `sa` em um ambiente que ja tem volume criado, pode ser necessário recriar o volume do banco
 
 ### 3. Subir a aplicacao
 
@@ -78,15 +78,15 @@ Observacoes:
 docker compose up -d --build
 ```
 
-### 4. Verificar se os servicos subiram
+### 4. Verificar se os serviços subiram
 
 ```bash
 docker compose ps
 ```
 
-Voce deve ver os servicos `api` e `sqlserver` como `Up`.
+Você deve ver os servicos `api` e `sqlserver` como `Up`.
 
-### 5. Abrir a aplicacao
+### 5. Abrir a aplicação
 
 - API: `http://localhost:5299`
 - Swagger: `http://localhost:5299/swagger`
@@ -136,11 +136,11 @@ Resetar completamente o ambiente, incluindo o volume do banco:
 docker compose down -v
 ```
 
-Use `down -v` apenas quando voce quiser recriar o banco do zero.
+Use `down -v` apenas quando você quiser recriar o banco do zero.
 
 ## Banco de Dados
 
-Configuracao padrao no ambiente Docker:
+Configuração padrão no ambiente Docker:
 
 - Host: `localhost,14330`
 - Database: valor de `SQLSERVER_DB`
@@ -212,31 +212,31 @@ Valores aceitos para `sex`:
 - `Other`
 - `NotInformed`
 
-## Regras de Negocio
+## Regras de Negócio
 
 - o contato deve ter `18 anos ou mais`
 - `birthDate` nao pode ser futura
 - idade `0` nao e permitida
-- `age` e calculada em tempo de execucao
+- `age` e calculada em tempo de execução
 - listagem e detalhe retornam apenas contatos ativos
 - `PUT` opera apenas em contatos ativos
-- desativacao e logica com `isActive = false`
-- exclusao com `DELETE` e fisica
+- desativação e lógica com `isActive = false`
+- exclusão com `DELETE` e fisica
 
-## Validacao
+## Validação
 
-As validacoes de entrada usam `FluentValidation`.
+As validações de entrada usam `FluentValidation`.
 
 Principais regras:
 
-- `name` e obrigatorio
-- `name` nao pode ser vazio
-- `name` tem maximo de `150` caracteres
-- `birthDate` e obrigatoria
-- `birthDate` nao pode ser `0001-01-01`
-- `birthDate` nao pode ser futura
+- `name` e obrigatório
+- `name` não pode ser vazio
+- `name` tem máximo de `150` caracteres
+- `birthDate` e obrigatória
+- `birthDate` não pode ser `0001-01-01`
+- `birthDate` não pode ser futura
 - idade deve ser maior ou igual a `18`
-- `sex` e obrigatorio
+- `sex` e obrigatório
 - `sex` deve estar dentro do enum suportado
 
 Formato padrao de erro:
@@ -270,14 +270,13 @@ Estado atual:
 - `50 testes`
 - `0 falhas`
 
-## Estrutura da Solucao
+## Estrutura da Solução
 
 ```text
 Contacts.slnx
 |-- docker-compose.yml
 |-- .env
 |-- docs
-|-- Specs
 |-- src
 |   |-- Contacts.API
 |   |-- Contacts.Application
@@ -293,8 +292,8 @@ Contacts.slnx
 - monolito modular por projetos
 - principios `SOLID`
 
-## Observacoes
+## Observações
 
 - a solucao principal do projeto e [Contacts.slnx](d:/medgroupo-test/Contacts.slnx)
 - o banco sobe junto com a API via `docker compose`
-- as migrations sao aplicadas automaticamente no startup da aplicacao
+- as migrations sao aplicadas automaticamente no startup da aplicação
