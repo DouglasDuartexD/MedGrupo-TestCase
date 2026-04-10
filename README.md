@@ -72,7 +72,7 @@ Observações:
 - o arquivo `.env` e local e esta no `.gitignore`
 - se você alterar a senha do `sa` em um ambiente que já tem volume criado, pode ser necessário recriar o volume do banco
 
-### 3. Subir a aplicacao
+### 3. Subir a aplicação
 
 ```bash
 docker compose up -d --build
