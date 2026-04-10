@@ -11,7 +11,7 @@ API REST para gerenciamento de contatos, desenvolvida com:
 
 ## Objetivo
 
-O projeto expoe uma API para cadastro e manutenção de contatos, com regras de negocio, validação de entrada e persistencia em `SQL Server`.
+O projeto expõe uma API para cadastro e manutenção de contatos, com regras de negocio, validação de entrada e persistencia em `SQL Server`.
 
 Fluxo principal de uso em desenvolvimento:
 
@@ -35,7 +35,7 @@ Documentação complementar:
 - `Docker Desktop`
 - `.NET 9 SDK`
 
-## Inicio Rapido
+## Inicio Rápido
 
 ### 1. Ir para a raiz do projeto
 
@@ -45,7 +45,7 @@ cd d:/medgroupo-test
 
 ### 2. Revisar o arquivo `.env`
 
-O projeto usa variaveis de ambiente locais para configurar portas, banco e senha do SQL Server.
+O projeto usa váriaveis de ambiente locais para configurar portas, banco e senha do SQL Server.
 
 Arquivo local:
 
@@ -70,7 +70,7 @@ SQLSERVER_EDITION=Developer
 Observações:
 
 - o arquivo `.env` e local e esta no `.gitignore`
-- se voce alterar a senha do `sa` em um ambiente que ja tem volume criado, pode ser necessário recriar o volume do banco
+- se você alterar a senha do `sa` em um ambiente que já tem volume criado, pode ser necessário recriar o volume do banco
 
 ### 3. Subir a aplicacao
 
@@ -84,7 +84,7 @@ docker compose up -d --build
 docker compose ps
 ```
 
-Você deve ver os servicos `api` e `sqlserver` como `Up`.
+Você deve ver os serviços `api` e `sqlserver` como `Up`.
 
 ### 5. Abrir a aplicação
 
@@ -215,9 +215,9 @@ Valores aceitos para `sex`:
 ## Regras de Negócio
 
 - o contato deve ter `18 anos ou mais`
-- `birthDate` nao pode ser futura
-- idade `0` nao e permitida
-- `age` e calculada em tempo de execução
+- `birthDate` não pode ser futura
+- idade `0` não e permitida
+- `age` e cálculada em tempo de execução
 - listagem e detalhe retornam apenas contatos ativos
 - `PUT` opera apenas em contatos ativos
 - desativação e lógica com `isActive = false`
@@ -229,14 +229,14 @@ As validações de entrada usam `FluentValidation`.
 
 Principais regras:
 
-- `name` e obrigatório
+- `name` é obrigatório
 - `name` não pode ser vazio
 - `name` tem máximo de `150` caracteres
-- `birthDate` e obrigatória
+- `birthDate` é obrigatória
 - `birthDate` não pode ser `0001-01-01`
 - `birthDate` não pode ser futura
 - idade deve ser maior ou igual a `18`
-- `sex` e obrigatório
+- `sex` é obrigatório
 - `sex` deve estar dentro do enum suportado
 
 Formato padrao de erro:
@@ -294,6 +294,6 @@ Contacts.slnx
 
 ## Observações
 
-- a solucao principal do projeto e [Contacts.slnx](d:/medgroupo-test/Contacts.slnx)
+- a solução principal do projeto e [Contacts.slnx](d:/medgroupo-test/Contacts.slnx)
 - o banco sobe junto com a API via `docker compose`
-- as migrations sao aplicadas automaticamente no startup da aplicação
+- as migrations são aplicadas automaticamente no startup da aplicação
