@@ -30,15 +30,6 @@ Documentacao complementar:
 - [docs/setup-and-operations.md](./docs/setup-and-operations.md)
 - [docs/testing-and-quality.md](./docs/testing-and-quality.md)
 
-Documentacao de planejamento e refinamentos:
-
-- [Specs/01-product-spec.md](./Specs/01-product-spec.md)
-- [Specs/02-solution-design.md](./Specs/02-solution-design.md)
-- [Specs/03-api-spec.md](./Specs/03-api-spec.md)
-- [Specs/04-delivery-plan.md](./Specs/04-delivery-plan.md)
-- [Specs/05-correction-spec-validation-and-api-hardening.md](./Specs/05-correction-spec-validation-and-api-hardening.md)
-- [Specs/06-correction-spec-enum-and-time-consistency.md](./Specs/06-correction-spec-enum-and-time-consistency.md)
-
 ## Pre-requisitos
 
 - `Docker Desktop`
